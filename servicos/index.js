@@ -1,7 +1,3 @@
-const nomePetshop = "Pet Solutions";
-
-console.log(nomePetshop);
-
 // cria um novo pet
 const adicionarPet = (nome, idade, raca, sexo, cuidador, castrado, vacinado, rga) => {
     let pet = {
@@ -36,7 +32,7 @@ const vacinarPet = pet => {
 }
 
 // verifica se o Pet está cadastrado;
-function verificarPet(rga){
+const buscarPet = (rga) => {
     let petEcontrado = listaDePets.filter((pet) => pet.rga == rga);
     return petEcontrado.length > 0;
 }
@@ -60,12 +56,5 @@ const listarPets = () => {
         console.log("Cuidador: " + pet.cuidador);
     })
 }
-let listaDePets = [];
 
-adicionarPet("Bob", 3, "vira-lata", "M", "Dino", false, false, 321);
-adicionarPet("Dida", 2, "vira-lata", "M", "Dino", false, false, 123);
-listarPets();
-// servicos(listaDePets[0], castrarPet);
-// servicos(listaDePets[0], vacinarPet);
-// listarPets();
-verificarCadastro(321, listaDePets[0])
+module.exports = {adicionarPet,listarPets,buscarPet,castrarPet,vacinarPet,servicos}

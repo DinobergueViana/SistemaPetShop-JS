@@ -1,0 +1,18 @@
+[
+    {
+        "nome": "Dida",
+        "idade": "2",
+        "sexo": "M",
+        "cuidador": "Dino",
+        "castrado":"false",
+        "vacinado":"true"
+    },
+    {
+        "nome": "Bob",
+        "idade": "3",
+        "sexo": "M",
+        "cuidador": "Dino",
+        "castrado":"false",
+        "vacinado":"true"
+    }
+]
