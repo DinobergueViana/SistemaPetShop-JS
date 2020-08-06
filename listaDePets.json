@@ -1,5 +1,6 @@
 [
     {
+        "rga": "423",
         "nome": "Dida",
         "idade": "2",
         "sexo": "M",
@@ -8,6 +9,7 @@
         "vacinado":"true"
     },
     {
+        "rga": "231",
         "nome": "Bob",
         "idade": "3",
         "sexo": "M",

@@ -1,16 +1,14 @@
+const listaDePets = require('../listaDePets.json')
+
 // cria um novo pet
-const adicionarPet = (nome, idade, raca, sexo, cuidador, castrado, vacinado, rga) => {
+const adicionarPet = (rga, nome) => {
+    console.log(rga)
     let pet = {
-        nome,
-        idade,
-        raca,
-        sexo,
-        cuidador,
-        castrado,
-        vacinado,
-        rga
+        rga,
+        nome
     }
     listaDePets.push(pet);
+    console.log(listaDePets);
 }
 
 // castra o pet
@@ -32,9 +30,9 @@ const vacinarPet = pet => {
 }
 
 // verifica se o Pet está cadastrado;
-const buscarPet = (rga) => {
-    let petEcontrado = listaDePets.filter((pet) => pet.rga == rga);
-    return petEcontrado.length > 0;
+const buscarPet = () => {
+    // let petEcontrado = pets.filter((pet) => pet.rga == rga);
+    // return petEcontrado.length > 0;
 }
 
 // realiza os serviços castrar e vacinar;
@@ -44,17 +42,25 @@ const servicos = (pet, tipoDeServico) => {
 }
 
 // exibe os dados do pet
-const listarPets = () => {
-
-    listaDePets.forEach(pet => {
-        console.log("Nome do pet: " + pet.nome);
-        console.log("Idade do pet: " + pet.idade);
-        console.log("Raça do pet: " + pet.raca);
-        console.log("Sexo: " + pet.sexo);
-        console.log("Castrado: " + pet.castrado);
-        console.log("Vacidado: " + pet.vacinado);
-        console.log("Cuidador: " + pet.cuidador);
-    })
+const listarPets = (lista) => {
+    console.log(lista);
+    let petString = "";
+    lista.forEach(pet =>{
+        console.log(pet)
+        petString += `Nome do pet: ${pet.nome}      
+`
+        
+    }) 
+    return petString;
+    // lista.forEach(pet => {
+    //     console.log("Nome do pet: " + pet.nome);
+    //     console.log("Idade do pet: " + pet.idade);
+    //     console.log("Raça do pet: " + pet.raca);
+    //     console.log("Sexo: " + pet.sexo);
+    //     console.log("Castrado: " + pet.castrado);
+    //     console.log("Vacidado: " + pet.vacinado);
+    //     console.log("Cuidador: " + pet.cuidador);
+    // });
 }
 
 module.exports = {adicionarPet,listarPets,buscarPet,castrarPet,vacinarPet,servicos}
