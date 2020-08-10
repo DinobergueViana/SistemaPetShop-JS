@@ -21,7 +21,9 @@ http.createServer(function(req, res){
 
     }
     if(rota =="/pet/add"){
-        
+        let {rga, nome, idade, sexo } = queryString;
+        let resultado = servicos.adicionarPet(listaDePets, rga, nome, idade, sexo);
+        res.end(resultado)
     }
 
 }).listen(3000,'localhost')

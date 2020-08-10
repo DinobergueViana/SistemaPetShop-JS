@@ -1,14 +1,16 @@
 const listaDePets = require('../listaDePets.json')
 
 // cria um novo pet
-const adicionarPet = (rga, nome) => {
-    console.log(rga)
+const adicionarPet = (lista, rga, nome, idade, sexo) => {
+    let novaLista = []
     let pet = {
         rga,
-        nome
+        nome,
+        idade,
+        sexo
     }
-    listaDePets.push(pet);
-    console.log(listaDePets);
+    lista.push(pet);
+    return "Pet adicionado com sucesso!"
 }
 
 // castra o pet
