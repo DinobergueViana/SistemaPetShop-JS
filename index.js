@@ -15,9 +15,9 @@ http.createServer(function(req, res){
         res.end(listar);
     }
     if(rota == "/pet"){
-        let nome = queryString.nome;
-        let pet = servicos.buscarPet(listaDePets, nome);
-        console.log(pet);
+        let {nome, rga} = queryString;
+        let pet = servicos.buscarPet(listaDePets, rga);
+        res.end(pet)
 
     }
     if(rota =="/pet/add"){

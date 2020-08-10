@@ -33,10 +33,20 @@ const vacinarPet = pet => {
 const buscarPet = (lista, rga) => {
     let resultado = "";
     let petAchado = lista.find(
-        (pet, numero) => (listaDePets[numero].rga == rga)
+        (pet) => (pet.rga == rga)
     );
-    return petAchado;
+    if(petAchado){
+        resultado = "Pet encontrado com sucesso!\n"
+        console.log(resultado);
+        for(var dado in petAchado){
+            resultado += dado.toUpperCase() + ": " + petAchado[dado] + "\n";            
+        }
+    }else{
+        resultado = "Pet não encontrado. O rga não consta em nossos dados."
+    }
 
+    return resultado;
+    
 }
 
 // realiza os serviços castrar e vacinar;
